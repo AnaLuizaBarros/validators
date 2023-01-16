@@ -1,27 +1,24 @@
-import { PagesModule } from './pages/pages.module';
-import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
 import { NgbDropdownModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-import { SharedModule } from './shared/shared.module';
+import { PasswordValidatorComponent } from './password-validator/password-validator.component';
 
 @NgModule({
   declarations: [
-    AppComponent],
+    PasswordValidatorComponent
+  ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
     CommonModule,
     NgbModule,
-    PagesModule,
     NgbDropdownModule,
-    AppRoutingModule,
-    SharedModule
   ],
+  exports: [PasswordValidatorComponent],
   providers: [],
-  bootstrap: [AppComponent]
+
 })
-export class AppModule { }
+export class SharedModule { }
